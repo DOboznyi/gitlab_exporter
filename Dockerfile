@@ -5,6 +5,7 @@ COPY requirements.txt /tmp/
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 COPY exporter.py /usr/local/bin/
+RUN chmod 555 /usr/local/bin/exporter.py
 EXPOSE 3001
 
 RUN adduser -S gitlab_monitor
